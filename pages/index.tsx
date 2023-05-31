@@ -1,17 +1,12 @@
-import { Footer } from "@/components/Footer";
-import { Navbar } from "@/components/Navbar";
-import Head from "next/head";
-import Image from "next/image";
-import { StartContent } from "@/components/StartContent";
-import { Search } from "@/components/Search";
-import { SetStateAction, useEffect, useRef, useState, KeyboardEvent } from "react";
-import { useRouter } from "next/router";
-import { Colors } from "@/components/constants/color";
-import { Button } from "@/components/Button";
-import { SideBar } from "@/components/SideBar";
 import AuthPage from "@/components/AuthPage";
-import SearchModal from "@/components/SearchModal";
 import PopularCard from "@/components/PopularCard";
+import { Search } from "@/components/Search";
+import SearchModal from "@/components/SearchModal";
+import { SideBar } from "@/components/SideBar";
+import { Title } from "@/components/Title";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import { KeyboardEvent, useEffect, useRef, useState } from "react";
 
 export default function Home() {
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -93,29 +88,7 @@ export default function Home() {
                 <div className="w-full space-y-lg">
                   <div>
                     <div className="pb-md md:pb-lg flex items-center justify-center">
-                      <div className="flex space-x-sm items-center">
-                        <div className="super font-sans text-base text-super selection:bg-super selection:text-white dark:selection:bg-opacity-50 selection:bg-opacity-70">
-                          <div className="h-auto transition-all duration-300 rounded-sm overflow-hidden group w-6 md:w-8">
-                            <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                              <rect width="1024" height="1024" className="transition-all duration-1000 fill-zinc-900 dark:fill-zinc-300 "></rect>
-                              <svg className="fill-zinc-50 dark:fill-zinc-900  transition-all duration-1000">
-                                <circle cx="512.408" cy="511.592" r="65.236"></circle>
-                                <circle cx="512.408" cy="731.764" r="65.236"></circle>
-                                <circle cx="512.408" cy="292.236" r="65.236"></circle>
-                                <circle cx="292.236" cy="511.592" r="65.236"></circle>
-                                <circle cx="292.236" cy="731.764" r="65.236"></circle>
-                                <circle cx="292.236" cy="292.236" r="65.236"></circle>
-                                <circle cx="732.579" cy="511.592" r="65.236"></circle>
-                                <circle cx="732.579" cy="731.764" r="65.236"></circle>
-                                <circle cx="732.579" cy="292.236" r="65.236"></circle>
-                              </svg>
-                            </svg>
-                          </div>
-                        </div>
-                        <div className="default font-sans text-base text-textMain dark:text-textMainDark selection:bg-super selection:text-white dark:selection:bg-opacity-50 selection:bg-opacity-70">
-                          <div className="font-display  font-semibold select-none text-[24px] md:text-[28px]">Chat Ai </div>
-                        </div>
-                      </div>
+                      <Title />
                     </div>
                     <Search inputRef={inputRef} query={query} setQuery={setQuery} handleKeyDown={handleKeyDown} handleSearch={handleSearch} />
                   </div>

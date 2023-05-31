@@ -1,12 +1,7 @@
 import { Button } from "@/components/Button";
 import FilePondUpload from "@/components/FileUpload";
-import { Footer } from "@/components/Footer";
-import { Input } from "@/components/Input";
-import { Navbar } from "@/components/Navbar";
 import { SideBar } from "@/components/SideBar";
 import SnackBar from "@/components/SnackBar";
-import { Colors } from "@/components/constants/color";
-import { createClient } from "@supabase/supabase-js";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState } from "react";

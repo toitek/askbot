@@ -1,13 +1,10 @@
 import AuthPage from "@/components/AuthPage";
-import SearchModal from "@/components/SearchModal";
+import PopularCard from "@/components/PopularCard";
 import { SideBar } from "@/components/SideBar";
 import localforage from "localforage";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import { KeyboardEvent, useEffect, useLayoutEffect, useRef, useState } from "react";
-import Image from "next/image";
-import { createClient } from "@supabase/supabase-js";
-import PopularCard from "@/components/PopularCard";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 export default function Dashboard() {
   const inputRef = useRef<HTMLTextAreaElement>(null);

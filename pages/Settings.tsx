@@ -1,12 +1,13 @@
 import AuthPage from "@/components/AuthPage";
 import SearchModal from "@/components/SearchModal";
 import { SideBar } from "@/components/SideBar";
+import { Title } from "@/components/Title";
+import { createClient } from "@supabase/supabase-js";
 import localforage from "localforage";
 import Head from "next/head";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { KeyboardEvent, useEffect, useLayoutEffect, useRef, useState } from "react";
-import Image from "next/image";
-import { createClient } from "@supabase/supabase-js";
 
 export default function Settings() {
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -90,36 +91,14 @@ export default function Settings() {
           newThreadHandler={newThreadHandler}
           setShowSignup={setShowSignup}
           yourThreadHandler={yourThreadHandler}
-          activePage="/"
+          activePage="Settings"
         />
         <div className="grow">
           <div className="md:hidden pt-[48px]">
             <div className="py-sm px-md fixed left-0 right-0 top-0 md:mb-0 z-10 w-full border-borderMain/75 dark:border-borderMainDark divide-borderMain dark:divide-borderMainDark ring-borderMain dark:ring-borderMainDark bg-background dark:bg-backgroundDark">
               <div className="flex items-center justify-between gap-x-sm md:hidden">
                 <a>
-                  <div className="flex space-x-sm items-center">
-                    <div className="super font-sans text-base text-super selection:bg-super selection:text-white dark:selection:bg-opacity-50 selection:bg-opacity-70">
-                      <div className="h-auto transition-all duration-300 rounded-sm overflow-hidden group w-6 md:w-6">
-                        <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
-                          <rect width="1024" height="1024" className="transition-all duration-1000 fill-zinc-900 dark:fill-zinc-300"></rect>
-                          <svg className="fill-zinc-50 dark:fill-zinc-900 transition-all duration-1000">
-                            <circle cx="512.408" cy="511.592" r="65.236"></circle>
-                            <circle cx="512.408" cy="731.764" r="65.236"></circle>
-                            <circle cx="512.408" cy="292.236" r="65.236"></circle>
-                            <circle cx="292.236" cy="511.592" r="65.236"></circle>
-                            <circle cx="292.236" cy="731.764" r="65.236"></circle>
-                            <circle cx="292.236" cy="292.236" r="65.236"></circle>
-                            <circle cx="732.579" cy="511.592" r="65.236"></circle>
-                            <circle cx="732.579" cy="731.764" r="65.236"></circle>
-                            <circle cx="732.579" cy="292.236" r="65.236"></circle>
-                          </svg>
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="default font-sans text-base text-textMain dark:text-textMainDark selection:bg-super selection:text-white dark:selection:bg-opacity-50 selection:bg-opacity-70">
-                      <div className="font-display font-semibold select-none text-[24px] md:text-[22px]">Chat Ai</div>
-                    </div>
-                  </div>
+                  <Title />
                 </a>
                 <a className="bg-super text-white hover:opacity-80 font-sans focus:outline-none outline-none transition duration-300 ease-in-out font-sans select-none items-center relative group justify-center rounded-md cursor-point active:scale-95 origin-center whitespace-nowrap inline-flex text-sm px-sm font-medium h-8">
                   <div className="flex items-center leading-none justify-center gap-xs">

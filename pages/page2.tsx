@@ -1,21 +1,16 @@
-import { Footer } from "@/components/Footer";
-import { Navbar } from "@/components/Navbar";
-import { ResponseText } from "@/components/Response-text";
-import { Search } from "@/components/Search";
-import { SideBar } from "@/components/SideBar";
+import { AnswerList } from "@/components/AnswerList";
 import AuthPage from "@/components/AuthPage";
-import { ArticleChunk, MightyDealChunk } from "@/types";
+import SearchModal from "@/components/SearchModal";
+import { SideBar } from "@/components/SideBar";
+import { Colors } from "@/components/constants/color";
+import { ArticleChunk } from "@/types";
 import { createClient } from "@supabase/supabase-js";
 import { IconArrowRight, IconArrowUp } from "@tabler/icons-react";
 import endent from "endent";
+import localforage from "localforage";
 import Head from "next/head";
-import Image from "next/image";
 import { useRouter } from "next/router";
-import { KeyboardEvent, SetStateAction, useCallback, useEffect, useRef, useState } from "react";
-import { SocialButton } from "@/components/SocialButton";
-import { AnswerList } from "@/components/AnswerList";
-import SearchModal from "@/components/SearchModal";
-import { Colors } from "@/components/constants/color";
+import { KeyboardEvent, useCallback, useEffect, useRef, useState } from "react";
 
 type quote = { text: string; author: string };
 
@@ -41,6 +36,7 @@ export default function Page2() {
   const [randomQuotes, setRandomQuotes] = useState<quote[]>([]);
   const [randomQuote, setRandomQuote] = useState<quote>();
   const [error, setError] = useState("");
+  const [userName, setUsername] = useState("");
 
   const [answerData, setAnswerData] = useState<{ query: string; chunks: ArticleChunk[] }[]>([]);
 
@@ -270,6 +266,20 @@ export default function Page2() {
   };
   const settingsHandler = () => {
     router.push({ pathname: "/Settings" });
+  };
+
+  const threadsHandler = async () => {
+    localforage.getItem("user").then((user: any) => {
+      setUsername(user?.session.email);
+    });
+
+    const obj = { query, answer: answer, userName };
+    const answerResponse = await fetch("/api/uploads/UploadThreads", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ obj }),
+    });
+    console.log(answerResponse);
   };
 
   return (
@@ -568,7 +578,7 @@ export default function Page2() {
                                               ></path>
                                             </svg>
                                             <div className="super text-[13px] font-bold tracking-widest font-mono leading-none uppercase text-super selection:bg-super selection:text-white dark:selection:bg-opacity-50 selection:bg-opacity-70">
-                                              Chat Ai
+                                              CHAT AI
                                             </div>
                                           </div>
                                         </div>
@@ -960,16 +970,18 @@ export default function Page2() {
             onClose={() => setShowSearch(false)}
           />
         )}
-        <AuthPage
-          onClose={() => {
-            setShowLogin(false);
-            setShowSignup(false);
-          }}
-          setShowSignup={setShowSignup}
-          setShowLogin={setShowLogin}
-          showLogin={showLogin}
-          showSignup={showSignup}
-        />
+        {(showLogin || showSignup) && (
+          <AuthPage
+            onClose={() => {
+              setShowLogin(false);
+              setShowSignup(false);
+            }}
+            setShowSignup={setShowSignup}
+            setShowLogin={setShowLogin}
+            showLogin={showLogin}
+            showSignup={showSignup}
+          />
+        )}
       </>
       {showButton && (
         <button

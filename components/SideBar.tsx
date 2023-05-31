@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import { Button } from "./Button";
-import { IconBrandDiscord, IconBrandTwitter, IconLogin, IconStack2, IconStack3, IconArticle } from "@tabler/icons-react";
-import Image from "next/image";
+import { IconArticle, IconLogin, IconStack2 } from "@tabler/icons-react";
 import localforage from "localforage";
-import { User } from "@supabase/supabase-js";
-import { useRouter } from "next/router";
+import Image from "next/image";
+import { useState } from "react";
 
 type Props = {
   setShowSignup?: (show: boolean) => void;

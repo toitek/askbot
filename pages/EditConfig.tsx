@@ -1,5 +1,5 @@
 import { Button } from "@/components/Button";
-import { Footer } from "@/components/Footer";
+
 import { Input } from "@/components/Input";
 import { Navbar } from "@/components/Navbar";
 import SnackBar from "@/components/SnackBar";
@@ -54,8 +54,6 @@ export default function EditConfig() {
             </div>
           </div>
         </div>
-
-        <Footer />
         <SnackBar message={msg} show={msg ? true : false} onClose={() => setMsg("")} />
       </div>
     </>
