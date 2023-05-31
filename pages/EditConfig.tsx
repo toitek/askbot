@@ -1,7 +1,6 @@
 import { Button } from "@/components/Button";
 
 import { Input } from "@/components/Input";
-import { Navbar } from "@/components/Navbar";
 import SnackBar from "@/components/SnackBar";
 import { Colors } from "@/components/constants/color";
 import { createClient } from "@supabase/supabase-js";
@@ -35,7 +34,7 @@ export default function EditConfig() {
         <link rel="icon" href="/logo2X.ico" />
       </Head>
       <div>
-        <Navbar HideLogin={true} admin={true} loggedIn={true} />
+        {/* <Navbar HideLogin={true} admin={true} loggedIn={true} /> */}
         <div className={`flex justify-center items-center h-screen bg-[${Colors.bgColor}]`}>
           <div className="bg-white p-8 rounded-lg shadow-md mx-4">
             <div className="py-2">

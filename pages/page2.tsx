@@ -9,6 +9,7 @@ import { IconArrowRight, IconArrowUp } from "@tabler/icons-react";
 import endent from "endent";
 import localforage from "localforage";
 import Head from "next/head";
+import Image from "next/image";
 import { useRouter } from "next/router";
 import { KeyboardEvent, useCallback, useEffect, useRef, useState } from "react";
 
@@ -474,7 +475,7 @@ export default function Page2() {
                             <div className="flex items-center gap-x-xs relative">
                               <div className="relative">
                                 <div className="aspect-square rounded-full overflow-hidden flex items-center justify-center w-5 border-borderMain/75 dark:border-borderMainDark divide-borderMain dark:divide-borderMainDark ring-borderMain dark:ring-borderMainDark bg-offsetPlus dark:bg-offsetPlusDark">
-                                  <img alt="User avatar" className="w-full h-auto" src="/static/images/bot.png" />
+                                 <Image alt="User avatar" className="w-full h-auto" src="/static/images/bot.png" />
                                 </div>
                               </div>
                               <div className="line-clamp-1 break-all default font-sans text-sm font-medium text-textMain dark:text-textMainDark selection:bg-super selection:text-white dark:selection:bg-opacity-50 selection:bg-opacity-70">
@@ -633,7 +634,7 @@ export default function Page2() {
                                                           <div className="flex items-center gap-x-xs border-borderMain/75 dark:border-borderMainDark divide-borderMain dark:divide-borderMainDark ring-borderMain dark:ring-borderMainDark bg-transparent">
                                                             <div className="relative top-one">
                                                               <div className="rounded-full overflow-hidden">
-                                                                <img
+                                                                <Image
                                                                   className="block w-[16px] h-[16px]"
                                                                   src="https://www.google.com/s2/favicons?sz=128&amp;domain=northmemorial.com"
                                                                   alt="northmemorial.com favicon"
@@ -667,7 +668,7 @@ export default function Page2() {
                                                           <div className="flex items-center gap-x-xs border-borderMain/75 dark:border-borderMainDark divide-borderMain dark:divide-borderMainDark ring-borderMain dark:ring-borderMainDark bg-transparent">
                                                             <div className="relative top-one">
                                                               <div className="rounded-full overflow-hidden">
-                                                                <img
+                                                                <Image
                                                                   className="block w-[16px] h-[16px]"
                                                                   src="https://www.google.com/s2/favicons?sz=128&amp;domain=mayoclinic.org"
                                                                   alt="mayoclinic.org favicon"
@@ -701,7 +702,7 @@ export default function Page2() {
                                                           <div className="flex items-center gap-x-xs border-borderMain/75 dark:border-borderMainDark divide-borderMain dark:divide-borderMainDark ring-borderMain dark:ring-borderMainDark bg-transparent">
                                                             <div className="relative top-one">
                                                               <div className="rounded-full overflow-hidden">
-                                                                <img
+                                                                <Image
                                                                   className="block w-[16px] h-[16px]"
                                                                   src="https://www.google.com/s2/favicons?sz=128&amp;domain=berkeleywellbeing.com"
                                                                   alt="berkeleywellbeing.com favicon"
@@ -735,7 +736,7 @@ export default function Page2() {
                                                           <div className="flex items-center gap-x-xs border-borderMain/75 dark:border-borderMainDark divide-borderMain dark:divide-borderMainDark ring-borderMain dark:ring-borderMainDark bg-transparent">
                                                             <div className="relative top-one">
                                                               <div className="rounded-full overflow-hidden">
-                                                                <img
+                                                                <Image
                                                                   className="block w-[16px] h-[16px]"
                                                                   src="https://www.google.com/s2/favicons?sz=128&amp;domain=healthline.com"
                                                                   alt="healthline.com favicon"
@@ -769,7 +770,7 @@ export default function Page2() {
                                                           <div className="flex items-center gap-x-xs border-borderMain/75 dark:border-borderMainDark divide-borderMain dark:divide-borderMainDark ring-borderMain dark:ring-borderMainDark bg-transparent">
                                                             <div className="relative top-one">
                                                               <div className="rounded-full overflow-hidden">
-                                                                <img
+                                                                <Image
                                                                   className="block w-[16px] h-[16px]"
                                                                   src="https://www.google.com/s2/favicons?sz=128&amp;domain=lifehack.org"
                                                                   alt="lifehack.org favicon"
